@@ -11,6 +11,12 @@ struct Greeter {
         if 12 <= theHour && theHour <= 16 {
             return "Good Afternoon"
         }
+        
+        if 0 <= theHour && theHour <= 4 || 17 <= theHour && theHour <= 23 {
+            return "Good Evening"
+        }
+        
+        
         return "Good Morning"
     }
     
@@ -53,6 +59,55 @@ final class GreeterTests: XCTestCase {
         
         XCTAssertEqual(result, "Good Afternoon")
     }
+    
+    func test_greet_with500pm_shouldSayGoodEvening() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 17, minute: 00))
+        
+        XCTAssertEqual(result, "Good Evening")
+    }
+    
+    func test_greet_with2359pm_shouldSayGoodEvening() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 23, minute: 59))
+        
+        XCTAssertEqual(result, "Good Evening")
+    }
+    
+    func test_greet_with2000pm_shouldSayGoodEvening() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 20, minute: 00))
+        
+        XCTAssertEqual(result, "Good Evening")
+    }
+    
+    func test_greet_with1200am_shouldSayGoodEvening() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 0, minute: 00))
+        
+        XCTAssertEqual(result, "Good Evening")
+    }
+    
+    func test_greet_with459am_shouldSayGoodEvening() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 4, minute: 59))
+        
+        XCTAssertEqual(result, "Good Evening")
+    }
+    
+    func test_greet_with2000am_shouldSayGoodEvening() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 2, minute: 00))
+        
+        XCTAssertEqual(result, "Good Evening")
+    }
+    
     
     // MARK:- Helpers
     
