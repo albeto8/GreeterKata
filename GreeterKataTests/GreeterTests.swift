@@ -17,22 +17,12 @@ struct Greeter {
     func greet(time: Date) -> String {
         let theHour = hour(for: time)
         
-        if greetingTimes[0].from <= theHour && theHour < greetingTimes[1].from {
-            return greetingTimes[0].greeting
+        for (index, greetingTime) in greetingTimes.enumerated() {
+            if greetingTime.from <= theHour && theHour < greetingTimes[index + 1].from {
+                return greetingTime.greeting
+            }
         }
-        
-        if greetingTimes[1].from <= theHour && theHour < greetingTimes[2].from {
-            return greetingTimes[1].greeting
-        }
-        
-        if greetingTimes[2].from <= theHour && theHour < greetingTimes[3].from {
-            return greetingTimes[2].greeting
-        }
-        
-        if greetingTimes[3].from <= theHour && theHour < greetingTimes[4].from {
-            return greetingTimes[3].greeting
-        }
-        
+
         return ""
     }
     
