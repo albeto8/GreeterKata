@@ -9,19 +9,19 @@ struct Greeter {
     func greet(time: Date) -> String {
         let theHour = hour(for: time)
         
-        if 0 <= theHour && theHour <= 4 {
+        if 0 <= theHour && theHour < 5 {
             return "Good Evening"
         }
         
-        if 5 <= theHour && theHour <= 11 {
+        if 5 <= theHour && theHour < 12 {
             return "Good Morning"
         }
         
-        if 12 <= theHour && theHour <= 16 {
+        if 12 <= theHour && theHour < 17 {
             return "Good Afternoon"
         }
         
-        if 17 <= theHour && theHour <= 23 {
+        if 17 <= theHour && theHour < 24 {
             return "Good Evening"
         }
         
