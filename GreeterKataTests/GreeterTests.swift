@@ -6,7 +6,8 @@ struct Greeter {
         (0, "Good Evening"),
         (5, "Good Morning"),
         (12, "Good Afternoon"),
-        (17, "Good Evening")
+        (17, "Good Evening"),
+        (24, "SENTINEL")
     ]
     
     init(name: String) {
@@ -16,19 +17,19 @@ struct Greeter {
     func greet(time: Date) -> String {
         let theHour = hour(for: time)
         
-        if 0 <= theHour && theHour < 5 {
+        if greetingTimes[0].from <= theHour && theHour < greetingTimes[1].from {
             return greetingTimes[0].greeting
         }
         
-        if 5 <= theHour && theHour < 12 {
+        if greetingTimes[1].from <= theHour && theHour < greetingTimes[2].from {
             return greetingTimes[1].greeting
         }
         
-        if 12 <= theHour && theHour < 17 {
+        if greetingTimes[2].from <= theHour && theHour < greetingTimes[3].from {
             return greetingTimes[2].greeting
         }
         
-        if 17 <= theHour && theHour < 24 {
+        if greetingTimes[3].from <= theHour && theHour < greetingTimes[4].from {
             return greetingTimes[3].greeting
         }
         
