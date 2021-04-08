@@ -20,7 +20,7 @@ struct Greeter {
         let hello = greeting(for: time)
         
         if name.isEmpty {
-            return hello
+            return "\(hello)"
         }
         return "\(hello), \(name)"
     }
