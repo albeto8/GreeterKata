@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F2C3A02B261F910500F08092 /* GreeterKata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C3A021261F910400F08092 /* GreeterKata.framework */; };
-		F2C3A030261F910500F08092 /* GreeterKataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3A02F261F910500F08092 /* GreeterKataTests.swift */; };
 		F2C3A032261F910500F08092 /* GreeterKata.h in Headers */ = {isa = PBXBuildFile; fileRef = F2C3A024261F910400F08092 /* GreeterKata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2C3A040261F912700F08092 /* GreeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3A03F261F912700F08092 /* GreeterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +27,8 @@
 		F2C3A024261F910400F08092 /* GreeterKata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreeterKata.h; sourceTree = "<group>"; };
 		F2C3A025261F910400F08092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2C3A02A261F910500F08092 /* GreeterKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreeterKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2C3A02F261F910500F08092 /* GreeterKataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreeterKataTests.swift; sourceTree = "<group>"; };
 		F2C3A031261F910500F08092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2C3A03F261F912700F08092 /* GreeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreeterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 		F2C3A02E261F910500F08092 /* GreeterKataTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2C3A02F261F910500F08092 /* GreeterKataTests.swift */,
 				F2C3A031261F910500F08092 /* Info.plist */,
+				F2C3A03F261F912700F08092 /* GreeterTests.swift */,
 			);
 			path = GreeterKataTests;
 			sourceTree = "<group>";
@@ -201,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C3A030261F910500F08092 /* GreeterKataTests.swift in Sources */,
+				F2C3A040261F912700F08092 /* GreeterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
