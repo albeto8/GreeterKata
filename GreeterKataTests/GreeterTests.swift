@@ -2,6 +2,13 @@
 import XCTest
 
 struct Greeter {
+    private let greetingTimes: [(from: Int, greeting: String)] = [
+        (0, "Good Evening"),
+        (5, "Good Morning"),
+        (12, "Good Afternoon"),
+        (17, "Good Evening")
+    ]
+    
     init(name: String) {
         
     }
@@ -10,19 +17,19 @@ struct Greeter {
         let theHour = hour(for: time)
         
         if 0 <= theHour && theHour < 5 {
-            return "Good Evening"
+            return greetingTimes[0].greeting
         }
         
         if 5 <= theHour && theHour < 12 {
-            return "Good Morning"
+            return greetingTimes[1].greeting
         }
         
         if 12 <= theHour && theHour < 17 {
-            return "Good Afternoon"
+            return greetingTimes[2].greeting
         }
         
         if 17 <= theHour && theHour < 24 {
-            return "Good Evening"
+            return greetingTimes[3].greeting
         }
         
         return ""
