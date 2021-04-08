@@ -7,7 +7,8 @@ struct Greeter {
     }
     
     func greet(time: Date) -> String {
-        if hour(for: time) == 12 || hour(for: time) == 16 {
+        let theHour = hour(for: time)
+        if 12 <= theHour && theHour <= 16 {
             return "Good Afternoon"
         }
         return "Good Morning"
@@ -41,6 +42,14 @@ final class GreeterTests: XCTestCase {
         let sut = Greeter(name: "")
         
         let result = sut.greet(time: date(hour: 16, minute: 59))
+        
+        XCTAssertEqual(result, "Good Afternoon")
+    }
+    
+    func test_greet_with200pm_shouldSayGoodAfternoon() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 14, minute: 00))
         
         XCTAssertEqual(result, "Good Afternoon")
     }
