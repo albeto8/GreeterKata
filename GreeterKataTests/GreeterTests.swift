@@ -36,6 +36,22 @@ final class GreeterTests: XCTestCase {
         XCTAssertEqual(result, "Good Morning")
     }
     
+    func test_greet_with500am_shouldSayGoodMorning() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 5, minute: 00))
+        
+        XCTAssertEqual(result, "Good Morning")
+    }
+    
+    func test_greet_with800am_shouldSayGoodMorning() {
+        let sut = Greeter(name: "")
+        
+        let result = sut.greet(time: date(hour: 8, minute: 00))
+        
+        XCTAssertEqual(result, "Good Morning")
+    }
+    
     func test_greet_with1200pm_shouldSayGoodAfternoon() {
         let sut = Greeter(name: "")
         
