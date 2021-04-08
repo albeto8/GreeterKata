@@ -19,10 +19,10 @@ struct Greeter {
     func greet(time: Date) -> String {
         let hello = greeting(for: time)
         
-        if !name.isEmpty {
-            return "\(hello), \(name)"
+        if name.isEmpty {
+            return hello
         }
-        return hello        
+        return "\(hello), \(name)"
     }
     
     private func greeting(for time: Date) -> String {
