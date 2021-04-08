@@ -32,6 +32,16 @@ struct Greeter {
     }
 }
 
+final class GreeterWithNameTests: XCTestCase {
+    func test_greetMorning_withAlberto_shouldSayGoodMorningAlberto() {
+        let sut = Greeter(name: "Alberto")
+        
+        let result = sut.greet(time: date(hour: 11, minute: 59))
+        
+        XCTAssertEqual(result, "Good Morning, Alberto")
+    }
+}
+
 final class GreeterWithoutNameTests: XCTestCase {
 
     func test_greet_with1159am_shouldSayGoodMorning() {
@@ -129,12 +139,11 @@ final class GreeterWithoutNameTests: XCTestCase {
         
         XCTAssertEqual(result, "Good Evening")
     }
-    
-    
-    // MARK:- Helpers
-    
-    private func date(hour: Int, minute: Int) -> Date {
-        let components = DateComponents(calendar: .current, hour: hour, minute: minute)
-        return components.date!
-    }
+}
+
+// MARK:- Helpers
+
+func date(hour: Int, minute: Int) -> Date {
+    let components = DateComponents(calendar: .current, hour: hour, minute: minute)
+    return components.date!
 }
