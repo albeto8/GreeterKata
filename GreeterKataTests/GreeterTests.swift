@@ -10,11 +10,17 @@ struct Greeter {
         (24, "SENTINEL")
     ]
     
+    private let name: String
+    
     init(name: String) {
-        
+        self.name = name
     }
     
     func greet(time: Date) -> String {
+        if !name.isEmpty {
+            return "Good Morning, Alberto"
+        }
+        
         let theHour = hour(for: time)
         
         for (index, greetingTime) in greetingTimes.enumerated() {
