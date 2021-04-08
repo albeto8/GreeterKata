@@ -22,7 +22,7 @@ struct Greeter {
         for (index, greetingTime) in greetingTimes.enumerated() {
             if greetingTime.from <= theHour && theHour < greetingTimes[index + 1].from {
                 if !name.isEmpty {
-                    return "\(greetingTime.greeting), Alberto"
+                    return "\(greetingTime.greeting), \(name)"
                 }
                 return greetingTime.greeting
             }
@@ -44,6 +44,14 @@ final class GreeterWithNameTests: XCTestCase {
         let result = sut.greet(time: date(hour: 11, minute: 59))
         
         XCTAssertEqual(result, "Good Morning, Alberto")
+    }
+    
+    func test_greetAfternoon_withBeryl_shouldSayGoodMorningBeryl() {
+        let sut = Greeter(name: "Beryl")
+        
+        let result = sut.greet(time: date(hour: 15, minute: 00))
+        
+        XCTAssertEqual(result, "Good Afternoon, Beryl")
     }
 }
 
